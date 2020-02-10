@@ -20,3 +20,54 @@ Modules added in the future may be release under different license, will specifi
 - Telegram [NULS 中文社区](https://t.me/Nulscn)
 
 ####  
+
+
+curl 'http://127.0.0.1:18004' -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"jsonrpc":"2.0","method":"getAnnulizedRewardStatistical","params":[1,3],"id":736}' 
+
+curl 'http://127.0.0.1:18003' -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"jsonrpc":"2.0","method":"getAnnulizedRewardStatistical","params":[1,3],"id":736}' 
+
+curl 'http://127.0.0.1:18003' -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"jsonrpc":"2.0","method":"getChainInfo","params":[3],"id":736}' -s | json
+
+ubuntu@db1:/data/nuls/NULS_WALLET$ 
+curl 'http://127.0.0.1:18003' -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"jsonrpc":"2.0","method":"getInfo","params":[3],"id":736}' -s | json
+{ubuntu@db1:/data/nuls/NULS_WALLET$ curl 'http://127.0.0.1:18003' -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"jsonrpc":"2.0","method":"getInfo","params":[3],"id":736}' -s | json
+{
+  "jsonrpc": "2.0",
+  "id": "736",
+  "result": {
+    "networkHeight": 534,
+    "isRunSmartContract": true,
+    "chainId": 3,
+    "agentAsset": null,
+    "localHeight": 534,
+    "magicNumber": 1000,
+    "defaultAsset": {
+      "symbol": "SAMO",
+      "chainId": 3,
+      "assetId": 1,
+      "decimals": 8
+    },
+    "isRunCrossChain": true
+  }
+}
+
+
+
+curl 'http://127.0.0.1:18003' -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"jsonrpc":"2.0","method":"getOtherChainList","params":[1],"id":736}' -s | json
+{
+  "jsonrpc": "2.0",
+  "id": "736",
+  "result": [
+    {
+      "chainName": null,
+      "chainId": 2
+    }
+  ]
+}
+
+curl 'http://127.0.0.1:18003' -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"jsonrpc":"2.0","method":"getBestBlockHeader","params":[3],"id":73116}' -s |json
+
+
+curl 'http://127.0.0.1:18003' -H 'Content-Type: application/json;charset=UTF-8' --data-binary '{"jsonrpc":"2.0","method":"getHeaderByHeight","params":[3,2],"id":73116}' -s |json
+
+import c115b83c2135d6b00044057a64ae52d8a7d7aba53f43da416983c721f397aaf0

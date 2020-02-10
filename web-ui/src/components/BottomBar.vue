@@ -1,27 +1,23 @@
 <template>
   <div class="bottom bg-gray">
     <ul class="b_ul w1200">
-      <li class="b_li font14 fl capitalize" v-show="symbol ==='NULS'">
-        <a href="https://nuls.io/home" target="_blank">{{$t('bottom.website')}}</a>
+      <li class="b_li font14 fl capitalize" v-show="symbol ==='SAMO'">
+        <a href="http://samos.io" target="_blank">{{$t('bottom.website')}}</a>
       </li>
-      <li class="b_li font14 fl" v-show="symbol ==='NULS'">
-        <a href="https://github.com/nuls-io" target="_blank">Github</a>
+      <li class="b_li font14 fl" v-show="symbol ==='SAMO'">
+        <a href="https://github.com/samoslab" target="_blank">Github</a>
       </li>
-      <li class="b_li font14 fl capitalize" v-show="symbol ==='NULS'">
-        <a href="https://wallet.nuls.io/" arget="_blank">{{$t('bottom.webWallet')}}</a>
+      <li class="b_li font14 fl capitalize" v-show="symbol ==='SAMO'">
+        <a href="https://wallet.samos.io/" arget="_blank">{{$t('bottom.webWallet')}}</a>
       </li>
-      <li class="b_li font14 fl capitalize" v-show="symbol ==='NULS'">
-        <a href="https://nuls.community/" target="_blank">{{$t('bottom.community')}}</a>
-      </li>
-      <li class="b_li font14 fl capitalize click" @click="toBugReport" v-show="symbol ==='NULS'">
+      
+      <li class="b_li font14 fl capitalize click" @click="toBugReport" v-show="symbol ==='SAMO'">
         {{$t('bottom.about')}}
       </li>
-      <li class="b_li font14 fl capitalize click" @click="toExplorer" v-show="symbol ==='NULS'">
+      <li class="b_li font14 fl capitalize click" @click="toExplorer" v-show="symbol ==='SAMO'">
         {{$t('bottom.explorer1')}}
       </li>
-      <li class="b_li font14 fl capitalize click" @click="toUrl('protocolUpdate')">
-        {{$t('protocolUpdate.upgradeProgress')}}
-      </li>
+    
       <li class="b_li font14 fr">Copyright @2019 {{symbol}}</li>
     </ul>
   </div>
@@ -35,7 +31,7 @@
     data() {
       return {
         height: 0,//当前高度
-        symbol: sessionStorage.hasOwnProperty('symbol') ? sessionStorage.getItem('symbol') : 'NULS',//默认symbol
+        symbol: sessionStorage.hasOwnProperty('symbol') ? sessionStorage.getItem('symbol') : 'SAMO',//默认symbol
       }
     },
     created() {
@@ -48,7 +44,7 @@
         this.getBestBlockHeader();
         this.getNodeNumber();
         this.getNULSNumber();
-        this.symbol = sessionStorage.hasOwnProperty('symbol') ? sessionStorage.getItem('symbol') : 'NULS';
+        this.symbol = sessionStorage.hasOwnProperty('symbol') ? sessionStorage.getItem('symbol') : 'SAMO';
         document.title = this.symbol + " Explorer";
       }, 10000);
     },
